@@ -5,4 +5,8 @@
         <item name="android:statusBarColor">#FF141218</item>
         <item name="android:navigationBarColor">#FF1C1B1F</item>
     </style>
+
+    <style name="Theme.Linlator.Fullscreen" parent="Theme.Linlator">
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
