@@ -48,7 +48,8 @@ class XServerDisplayActivity : Activity() {
         super.onPause()
         containerProcess?.let { proc ->
             try {
-                val pid = proc.pid()
+                val m = proc::class.java.getMethod("pid")
+                val pid = m.invoke(proc)
                 Runtime.getRuntime().exec(arrayOf("kill", "-SIGSTOP", pid.toString())).waitFor()
             } catch (_: Exception) { }
         }
@@ -66,7 +67,8 @@ class XServerDisplayActivity : Activity() {
                 )
         containerProcess?.let { proc ->
             try {
-                val pid = proc.pid()
+                val m = proc::class.java.getMethod("pid")
+                val pid = m.invoke(proc)
                 Runtime.getRuntime().exec(arrayOf("kill", "-SIGCONT", pid.toString())).waitFor()
             } catch (_: Exception) { }
         }

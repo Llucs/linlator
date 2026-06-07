@@ -80,7 +80,7 @@ class ContainerRuntime(private val filesDir: File) {
     fun pause(): Boolean {
         val pid = getPid() ?: return false
         return try {
-            Runtime.getRuntime().exec(arrayOf("kill", "-SIGSTOP", pid.toString())).waitFor()
+            Runtime.getRuntime().exec(arrayOf("kill", "-SIGSTOP", pid)).waitFor()
             true
         } catch (_: Exception) {
             false
@@ -90,16 +90,17 @@ class ContainerRuntime(private val filesDir: File) {
     fun resume(): Boolean {
         val pid = getPid() ?: return false
         return try {
-            Runtime.getRuntime().exec(arrayOf("kill", "-SIGCONT", pid.toString())).waitFor()
+            Runtime.getRuntime().exec(arrayOf("kill", "-SIGCONT", pid)).waitFor()
             true
         } catch (_: Exception) {
             false
         }
     }
 
-    private fun getPid(): Long? {
+    private fun getPid(): String? {
         return try {
-            process?.pid()
+            val m = process!!::class.java.getMethod("pid")
+            m.invoke(process).toString()
         } catch (_: Exception) {
             null
         }
