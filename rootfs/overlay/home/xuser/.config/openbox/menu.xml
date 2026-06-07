@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+  <menu id="root-menu" label="Linlator">
+    <item label="Terminal">
+      <action name="Execute">
+        <command>x-terminal-emulator</command>
+      </action>
+    </item>
+    <item label="File Manager">
+      <action name="Execute">
+        <command>xterm -e mc</command>
+      </action>
+    </item>
+    <item label="Install Package">
+      <action name="Execute">
+        <command>xterm -e 'apk update && apk add'</command>
+      </action>
+    </item>
+    <separator/>
+    <item label="Exit Desktop">
+      <action name="Exit">
+        <prompt>no</prompt>
+      </action>
+    </item>
+  </menu>
+</openbox_menu>

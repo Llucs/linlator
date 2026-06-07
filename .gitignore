@@ -1,0 +1,15 @@
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+*.apk
+*.aab
+*.keystore
+captures/
+.externalNativeBuild/
+.cxx/
+*.tzst
+*.tar.gz
+*.tar.xz

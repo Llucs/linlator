@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "base_url": "https://github.com/Llucs/linlator/releases/download/components",
+  "components": {
+    "rootfs": {
+      "alpine": {
+        "version": "3.21",
+        "url": "rootfs-alpine-3.21.tar.zst",
+        "sha256": "",
+        "size": 0
+      },
+      "debian": {
+        "version": "bookworm",
+        "url": "rootfs-debian-bookworm.tar.zst",
+        "sha256": "",
+        "size": 0
+      },
+      "ubuntu": {
+        "version": "24.04",
+        "url": "rootfs-ubuntu-24.04.tar.zst",
+        "sha256": "",
+        "size": 0
+      }
+    },
+    "proot": {
+      "version": "5.4.0",
+      "url": "proot-arm64.tar.zst",
+      "sha256": "",
+      "size": 0
+    },
+    "mesa": {
+      "zink": {"version": "24.3.0", "url": "mesa-zink-arm64.tar.zst", "sha256": "", "size": 0},
+      "virgl": {"version": "24.3.0", "url": "mesa-virgl-arm64.tar.zst", "sha256": "", "size": 0},
+      "gl4es": {"version": "1.1.7", "url": "gl4es-arm64.tar.zst", "sha256": "", "size": 0}
+    },
+    "desktop": {
+      "openbox": {"version": "3.6.1", "url": "desktop-openbox.tar.zst", "sha256": "", "size": 0},
+      "xfce4": {"version": "4.18", "url": "desktop-xfce4.tar.zst", "sha256": "", "size": 0}
+    }
+  }
+}
