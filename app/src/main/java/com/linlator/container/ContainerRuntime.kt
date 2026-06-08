@@ -16,13 +16,16 @@ class ContainerRuntime(private val filesDir: File) {
             throw IllegalStateException("PRoot binary not found at ${prootBinary.absolutePath}")
         }
 
+        val x11SocketDir = File(filesDir, "xserver")
+        x11SocketDir.mkdirs()
+
         val command = mutableListOf(
             prootBinary.absolutePath,
             "-r", rootfs.absolutePath,
             "-b", "/dev",
             "-b", "/proc",
             "-b", "/sys",
-            "-b", "${filesDir.absolutePath}/xserver/X0:/tmp/.X11-unix/X0",
+            "-b", "${x11SocketDir.absolutePath}:/tmp/.X11-unix",
             "-b", "${containerDir.absolutePath}/tmp:/tmp",
             "-w", "/root",
             "--kill-on-exit"
