@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <cerrno>
+#include <sys/stat.h>
 
 #define LOG_TAG "LinlatorNative"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
