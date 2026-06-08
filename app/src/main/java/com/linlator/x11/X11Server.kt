@@ -685,7 +685,7 @@ class X11Server(private val socketPath: String) : Closeable {
 
     private fun requestClearArea(conn: Connection, buf: ByteBuffer) {
         try {
-            buf.get()
+            val exposures = buf.get().toInt()
             buf.get()
             buf.getShort()
             val winId = buf.getInt()
@@ -899,7 +899,7 @@ class X11Server(private val socketPath: String) : Closeable {
             ev.putShort(0)
             ev.putShort(0)
             ev.putShort(0)
-            ev.putShort(0.toByte())
+            ev.putShort(0)
             ev.putShort(win.width.toShort())
             ev.putShort(win.height.toShort())
             ev.putShort(0.toShort())
